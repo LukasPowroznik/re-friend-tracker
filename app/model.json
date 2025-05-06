@@ -126,7 +126,8 @@
                         "name": "Ok"
                     }
                 ]
-            },{
+            },
+            {
                 "id": "GroupForm",
                 "title": "Group",
                 "url": "/group",
@@ -135,6 +136,33 @@
                         "id": "name",
                         "type": "text",
                         "name": "GroupName",
+                        "width": 2,
+                        "required": true
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            
+            },
+            {
+                "id": "ActivityForm",
+                "title": "Activity",
+                "url": "/activity",
+                "formFieldList": [
+                    {
+                        "id": "name",
+                        "type": "text",
+                        "name": "Activityname",
                         "width": 2,
                         "required": true
                     },
@@ -178,6 +206,12 @@
                         "icon": "fa-weixin",
                         "color": "wisteria",
                         "page": "groupspage"
+                    },{
+                        "type": "button",
+                        "name": "Activities",
+                        "icon": "fa-volleyball-ball",
+                        "color": "green-sea",
+                        "page": "activitypage"
                     }
                 ]
             },
@@ -259,6 +293,34 @@
                         "url": "/group",
                         "form": {
                             "form": "GroupForm"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "activitypage",
+                "elementList": [
+                    {
+                        "type": "backbutton"
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "NewActivity",
+                        "icon": "fa-volleyball-ball",
+                        "color": "green-sea",
+                        "width": 2,
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    },
+                    {
+                        "type": "list",
+                        "icon": "fa-volleyball-ball",
+                        "color": "green-sea",
+                        "search": true,
+                        "url": "/activity",
+                        "form": {
+                            "form": "ActivityForm"
                         }
                     }
                 ]
