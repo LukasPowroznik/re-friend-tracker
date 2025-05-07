@@ -162,9 +162,17 @@
                     {
                         "id": "name",
                         "type": "text",
-                        "name": "Activityname",
+                        "name": "ActivityName",
                         "width": 2,
                         "required": true
+                    },
+                    {
+                        "id":   "location",
+                        "type": "autocomplete",
+                        "name": "Location",
+                        "url": "/location",
+                        "form": "LocationForm",
+                        "width": 2
                     },
                     {
                         "type": "deleteButton",
@@ -200,13 +208,15 @@
                         "icon": "fa-cubes",
                         "color": "yellow",
                         "page": "locationspage"
-                    },{
+                    },
+                    {
                         "type": "button",
                         "name": "Groups",
                         "icon": "fa-weixin",
                         "color": "wisteria",
                         "page": "groupspage"
-                    },{
+                    },
+                    {
                         "type": "button",
                         "name": "Activities",
                         "icon": "fa-volleyball-ball",
@@ -236,6 +246,7 @@
                         "color": "blue",
                         "search": true,
                         "url": "/friend",
+                        "page": "friendactivitypage",
                         "form": {
                             "form": "FriendForm"
                         }
@@ -306,6 +317,44 @@
                     {
                         "type": "newButton",
                         "name": "NewActivity",
+                        "icon": "fa-volleyball-ball",
+                        "color": "green-sea",
+                        "width": 2,
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    },
+                    {
+                        "type": "list",
+                        "icon": "fa-volleyball-ball",
+                        "color": "green-sea",
+                        "search": true,
+                        "url": "/activity",
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "friendactivitypage",
+                "elementList": [
+                    {
+                        "type": "backbutton"
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "Edit Friend",
+                        "icon": "fa-user",
+                        "color": "green",
+                        "width": 2,
+                        "form": {
+                            "form": "FriendForm"
+                        }
+                    }, 
+                    {
+                        "type": "newButton",
+                        "name": "Add Activity",
                         "icon": "fa-volleyball-ball",
                         "color": "green-sea",
                         "width": 2,
