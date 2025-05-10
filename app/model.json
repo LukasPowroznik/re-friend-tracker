@@ -6,6 +6,7 @@
                 "id": "FriendForm",
                 "title": "Friend",
                 "url": "/friend",
+                "urlDefaults": true,
                 "formFieldList": [
                     {
                         "id": "familyName",
@@ -37,7 +38,7 @@
                         "width": 2
                     },
                     {
-                        "id":   "location",
+                        "id": "location",
                         "type": "autocomplete",
                         "name": "Location",
                         "url": "/location",
@@ -104,7 +105,7 @@
                 "url": "/friend/:friendKey/activity",
                 "formFieldList": [
                     {
-                        "id":   "activity",
+                        "id": "activity",
                         "type": "autocomplete",
                         "name": "Activity",
                         "url": "/activity",
@@ -152,7 +153,6 @@
                         "name": "Ok"
                     }
                 ]
-            
             },
             {
                 "id": "ActivityForm",
@@ -167,7 +167,7 @@
                         "required": true
                     },
                     {
-                        "id":   "location",
+                        "id": "location",
                         "type": "autocomplete",
                         "name": "Location",
                         "url": "/location",
@@ -187,7 +187,6 @@
                         "name": "Ok"
                     }
                 ]
-            
             }
         ],
         "pageList": [
@@ -280,7 +279,8 @@
                         }
                     }
                 ]
-            },{
+            },
+            {
                 "id": "groupspage",
                 "elementList": [
                     {
@@ -338,28 +338,29 @@
             },
             {
                 "id": "friendactivitypage",
+                "url": "/friend/:friendKey/activity",
                 "elementList": [
                     {
                         "type": "backbutton"
                     },
                     {
-                        "type": "newButton",
-                        "name": "Edit Friend",
+                        "type": "button",
+                        "name": { "default": "Edit Friend" },
                         "icon": "fa-user",
                         "color": "green",
                         "width": 2,
                         "form": {
                             "form": "FriendForm"
                         }
-                    }, 
+                    },
                     {
                         "type": "newButton",
-                        "name": "Add Activity",
+                        "name": { "default": "Add Activity" },
                         "icon": "fa-volleyball-ball",
                         "color": "green-sea",
                         "width": 2,
                         "form": {
-                            "form": "ActivityForm"
+                            "form": "AddActivityForm"
                         }
                     },
                     {
@@ -367,9 +368,9 @@
                         "icon": "fa-volleyball-ball",
                         "color": "green-sea",
                         "search": true,
-                        "url": "/activity",
+                        "url": "/friend/:friendKey/activity",
                         "form": {
-                            "form": "ActivityForm"
+                            "form": "AddActivityForm"
                         }
                     }
                 ]
